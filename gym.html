@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gym - PROFITNESS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/i.jpg) no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+    }
+
+    /* Header / Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      min-width: 220px;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      width: 100%;
+    }
+
+    .dropdown-content li a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #00ffcc;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    h1.title {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 50px;
+      color: red;
+    }
+
+    /* Flip Cards */
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    .column {
+      margin: 20px;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      width: 175px;
+      height: 196px;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 255, 204, 0.4);
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+      width: 190px;
+      height: 210px;
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+    }
+
+    .flip-card-front {
+      background-color: #bbb;
+      color: black;
+    }
+
+    .flip-card-back {
+      background-color: red;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px 20px;
+      text-align: center;
+      color: #ccc;
+      font-size: 16px;
+      margin-top: 60px;
+    }
+
+    .social-icons {
+      margin-bottom: 15px;
+    }
+
+    .social-icons a {
+      color: #00ffff;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00ffcc;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="Gym.html">Gym</a></li>
+        <li><a href="plandiet.html">Diet</a></li>
+        <li class="dropdown">
+          <a href="#">Calculators <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown-content">
+            <li><a href="bmi.html">BMI Calculator</a></li>
+            <li><a href="calorie calculator.html">Calorie Calculator</a></li>
+            <li><a href="dietcalculator.html">Diet Calculator</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <h1 class="title">GYM</h1>
+
+  <!-- Flip Cards -->
+  <div class="row">
+    <div class="column">
+      <a href="abs(all).html">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/abs.png" alt="Abs" style="width:175px;height:196px;">
+            </div>
+            <div class="flip-card-back">
+              <h1 style="color: lightgreen;">ABS</h1>
+              <p>abs exercises are important for strong, firm abs, but spot reducing is a myth</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="column">
+      <a href="legs(all).html">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/legs.jpg" alt="Legs" style="width:175px;height:196px;">
+            </div>
+            <div class="flip-card-back">
+              <h1 style="color: lightgreen;">LEGS</h1>
+              <p>Leg day is hard but crucial for full-body strength.</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="column">
+      <a href="shoulder(all).html">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/shoulder.png" alt="Shoulder" style="width:174px;height:196px;">
+            </div>
+            <div class="flip-card-back">
+              <h1 style="color: lightgreen;">SHOULDER</h1>
+              <p>Broad shoulders make a strong, heroic silhouette.</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="column">
+      <a href="arms(all).html">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/arms.png" alt="Arms" style="width:175px;height:196px;">
+            </div>
+            <div class="flip-card-back">
+              <h1 style="color: lightgreen;">ARMS</h1>
+              <p>Want to go sleeveless with confidence? This is for you!</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    &copy; 2025 PROFITNESS. All rights reserved.
+  </footer>
+
+</body>
+</html>

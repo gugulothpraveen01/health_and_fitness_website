@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/newlogo.png" type="image/x-icon" />
+  <title>Welcome to ProFitness</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+    .opening-page {
+      background: url('images/open1.jpg')no-repeat center center/cover;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      animation: fadeIn 2s ease;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+    .logo-heading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px; /* Space between text and logo */
+      animation: slideDown 1s ease forwards;
+    }
+    .logo-heading h1 {
+      font-size: 3.5rem;
+    }
+    .logo-heading img {
+      width: 60px;
+      height: 70px;
+     margin-bottom: 20px; 
+      object-fit: contain;
+      animation: zoomIn 1s ease forwards;
+    }
+    .content p {
+      font-size: 1.5rem;
+      margin: 20px 0 40px 0;
+      animation: slideUp 1s ease forwards;
+    }
+    .content button {
+      padding: 15px 35px;
+      font-size: 1.2rem;
+      background-color: #ff5722;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      color: white;
+      transition: background-color 0.3s;
+      animation: fadeInButton 2s ease forwards;
+      box-shadow: #ff5722 2px,2px ;
+    }
+    .content button:hover {
+      background-color: #e64a19;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideDown {
+      from {transform: translateY(-50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes slideUp {
+      from {transform: translateY(50px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+    @keyframes fadeInButton {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes zoomIn {
+      from {transform: scale(0);}
+      to {transform: scale(1);}
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="opening-page">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="logo-heading">
+        <h1>Welcome to ProFitness</h1>
+      <img src="images/newlogo.png" alt="Logo"> <!-- Replace 'your-logo.png' with your actual logo path -->
+    </div>
+    <p>Shape Your Body, Shape Your Life</p>
+    <button id="enterBtn" >Enter</button>
+  </div>
+</div>
+
+<script>
+  document.getElementById('enterBtn').addEventListener('click', function() {
+    document.querySelector('.opening-page').style.transition = 'all 1s ease';
+    document.querySelector('.opening-page').style.opacity = '0';
+    setTimeout(function() {
+      window.location.href = 'signup.html'; // Replace with your real homepage
+    }, 1000);
+  });
+</script>
+
+</body>
+</html>

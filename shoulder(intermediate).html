@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shoulder-Intermediate| PROFITNESS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-transform: capitalize;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: black;
+      color: white;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background video fixed to cover the entire screen */
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the video covers the entire screen */
+      z-index: -1; /* Keeps the video behind all other content */
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(0, 0, 0, 0.95);
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background: #00ffcc;
+      color: black;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin-top: 130px;
+      text-align: center;
+      font-size: 48px;
+      color: #00ffcc;
+    }
+
+    .content {
+      display: grid;
+      margin-left: 100px;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 20px auto 60px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .column.center {
+      align-items: center;
+      justify-content: center;
+      margin-right: 130px;
+    }
+
+    video.exercise {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 8px;
+      opacity: 0.8;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    video.exercise:hover {
+      transform: scale(1.05);
+      opacity: 1;
+    }
+
+    fieldset {
+      border: 2px solid #00ffcc;
+      border-radius: 100%;
+      padding: 30px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffcc;
+      background: rgba(30, 30, 30, 0.5);
+    }
+
+    fieldset button {
+      border: none;
+      background: #00ffcc;
+      color: black;
+      padding: 12px;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+
+    fieldset span {
+      display: inline-block;
+      width: 60px;
+      font-size: 1.2em;
+    }
+
+    .center .small-btn {
+      background: #444;
+      color: #00ffcc;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 30px;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 1000px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+      .column.center {
+        order: -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Background video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="images/backback.mp4" type="video/mp4">
+  </video>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="gym.html">Gym</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="plandiet.html">Diet</a></li>
+        <li class="dropdown">
+          <a href="#">Calculators</a>
+          <div class="dropdown-content">
+            <a href="calorie%20calculator.html">Calorie Calculator</a>
+            <a href="bmi.html">BMI Calculator</a>
+            <a href="dietcalculator.html">Diet Calculator</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Title -->
+  <h1>Shoulder – Intermediate Level</h1>
+
+  <!-- Main grid -->
+  <div class="content">
+    <!-- Left videos -->
+    <div class="column">
+      <video class="exercise" src="images/swimmer.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/hoverpushup.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/floorstretchleft.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/floorstretchright.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/sissors.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/pulls.mp4" muted loop autoplay></video>
+    </div>
+
+    <!-- Center timer & controls -->
+    <div class="column center">
+      <fieldset>
+        <button onclick="startTimer()">▶</button>
+        <span id="timer">0.0</span>
+        <button onclick="stopTimer()">❚❚</button>
+        <button onclick="resetTimer()">⟲</button>
+      </fieldset>
+      <button class="small-btn" onclick="alert('Take a 90-second break!')">Feeling Exhausted?</button>
+      <button class="small-btn" onclick="alert('Great—keep going!')">Not Exhausted?</button>
+    </div>
+
+    <!-- Right videos -->
+    <div class="column">
+      <video class="exercise" src="images/childpose.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/hiphinge.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/kickbacktriceps.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/cat.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/inclinepushup.mp4" muted loop autoplay></video>
+      <video class="exercise" src="images/hoverpushup.mp4" muted loop autoplay></video>
+    </div>
+  </div>
+
+  <!-- Timer script -->
+  <script>
+    let t = 0, running = false, timer;
+    function updateDisplay(){
+      document.getElementById("timer").textContent = (t/100).toFixed(1);
+      t++;
+    }
+    function startTimer(){
+      if (!running) {
+        running = true;
+        timer = setInterval(updateDisplay, 10);
+      }
+    }
+    function stopTimer(){
+      clearInterval(timer);
+      running = false;
+    }
+    function resetTimer(){
+      t = 0;
+      updateDisplay();
+    }
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 PROFITNESS. All Rights Reserved &reg;
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | PROFITNESS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      text-transform: capitalize;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      background: url('images/shoallback.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    /* Background Image */
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('images/fitness-bg.jpg'); /* 🖼️ Replace with your actual image path */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -2;
+    }
+
+    /* Overlay for contrast */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    /* Login Container */
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-form {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 50px;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 450px;
+      color: white;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .login-form:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      margin-bottom: 30px;
+      font-size: 34px;
+      color: #00ffcc;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 15px;
+      margin: 12px 0;
+      border: 2px solid #00ffcc;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 16px;
+    }
+
+    .input-field:focus {
+      border-color: #00ffff;
+      outline: none;
+    }
+
+    .login-button {
+      display: inline-block;
+      width: 100%;
+      padding: 15px;
+      background-color: #1abc9c;
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #16a085;
+    }
+
+    .forgot-password {
+      display: block;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    .forgot-password:hover {
+      color: #00ffff;
+    }
+
+    @media (max-width: 600px) {
+      .login-form {
+        padding: 30px;
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Image & Overlay -->
+  <div class="bg-image"><img></div>
+  <div class="overlay"></div>
+
+  <!-- Login Form -->
+  <div class="login-container">
+    <div class="login-form">
+      <h2>PROFITNESS Login</h2>
+      <form>
+        <input type="email" class="input-field" placeholder="Email" name="email" required>
+        <input type="password" class="input-field" placeholder="Password" name="password" required>
+        <br><br>
+        <a href="index.html" class="login-button">Login</a>
+        <br><br>
+        <a href="signup.html" class="forgot-password"><b>Signup</b></a>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

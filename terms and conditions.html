@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms and Conditions | PROFITNESS</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-transform: capitalize;
+    }
+
+    body {
+      background: url("images/termback.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(0, 0, 0, 0.95);
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background: #00ffcc;
+      color: black;
+      border-radius: 4px;
+    }
+
+    main {
+      padding: 150px 20px 60px;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 12px;
+      margin-top: 150px;
+      
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #00ffcc;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 10px;
+      color: #00ffff;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #eee;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      header {
+        padding: 10px 20px;
+      }
+
+      main {
+        padding: 130px 15px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="gym.html">Gym</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="plandiet.html">Diet</a></li>
+        <li class="dropdown">
+          <a href="#">Calculators</a>
+          <div class="dropdown-content">
+            <a href="calorie%20calculator.html">Calorie Calculator</a>
+            <a href="bmi.html">BMI Calculator</a>
+            <a href="dietcalculator.html">Diet Calculator</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Terms and Conditions</h1>
+
+    <p>Welcome to PROFITNESS. These terms and conditions outline the rules and regulations for the use of our website.</p>
+
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing this website, you accept these terms and conditions in full. Do not continue to use the website if you do not accept all of the terms stated on this page.</p>
+
+    <h2>2. License</h2>
+    <p>Unless otherwise stated, PROFITNESS and/or its licensors own the intellectual property rights for all material on the website. All intellectual property rights are reserved.</p>
+
+    <h2>3. User Responsibilities</h2>
+    <p>Users are responsible for maintaining the confidentiality of their account and password. You agree to accept responsibility for all activities that occur under your account.</p>
+
+    <h2>4. Restrictions</h2>
+    <p>You are specifically restricted from publishing any website material in any media, selling or sublicensing material, using this website in a way that is damaging or affects user access.</p>
+
+    <h2>5. Governing Law</h2>
+    <p>These Terms will be governed by and interpreted in accordance with the laws of the country where PROFITNESS is based.</p>
+  </main>
+
+  <footer>
+    &copy; 2025 PROFITNESS. All Rights Reserved &reg;
+  </footer>
+
+</body>
+</html>

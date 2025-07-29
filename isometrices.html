@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ISOMETRICS | PROFITNESS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-transform: capitalize;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      color: white;
+      position: relative;
+      z-index: 1;
+      background-color: black;
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.95);
+      min-width: 180px;
+      top: 100%;
+      left: 0;
+      border-radius: 8px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #00ffcc;
+      color: black;
+    }
+
+    h1 {
+      margin-top: 130px;
+      text-align: center;
+      font-size: 48px;
+      color: #00ffcc;
+    }
+
+    .slider {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #00ffcc;
+      border-radius: 12px;
+    }
+
+    .slides {
+      display: flex;
+      width: 400%;
+      animation: slide 16s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% {margin-left: 0%;}
+      20% {margin-left: 0%;}
+      25% {margin-left: -100%;}
+      45% {margin-left: -100%;}
+      50% {margin-left: -200%;}
+      70% {margin-left: -200%;}
+      75% {margin-left: -300%;}
+      95% {margin-left: -300%;}
+      100% {margin-left: 0%;}
+    }
+
+    .content {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto 40px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
+
+    .content h3 {
+      color: #00ffcc;
+      font-size: 26px;
+      margin-top: 20px;
+    }
+
+    .content p {
+      font-size: 18px;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video background -->
+  <video autoplay muted loop id="bg-video">
+    <source src="images/anaerobic-bg.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="gym.html">Gym</a></li>
+        <li class="dropdown">
+          <a href="#">Calculators</a>
+          <div class="dropdown-content">
+            <a href="calorie calculator.html">Calorie Calculator</a>
+            <a href="bmi.html">BMI Calculator</a>
+            <a href="dietcalculator.html">Diet Calculator</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Title -->
+  <h1>ISOMETRICS</h1>
+
+  <!-- Image Slider -->
+  <div class="slider">
+    <div class="slides">
+      <img src="images/isometrices2.jpg" alt="Isometrics 1" />
+      <img src="images/isometrices3.jpg" alt="Isometrics 2" />
+      <img src="images/isometrices4.jpg" alt="Isometrics 3" />
+      <img src="images/isometrices5.jpg" alt="Isometrics 4" />
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <h3>Equipment:</h3>
+    <p>Yoga mat</p>
+
+    <h3>Benefits:</h3>
+    <p>It is a simple, but effective core exercise that helps you build stability and strength throughout your entire body. The plank is achievable in a number of different methods, but the main goal of the plank exercise will have you with your body perpendicular to the ground, stomach facing down, elevating your torso off the ground with either your elbows or hands.</p>
+
+    <h3>Safety:</h3>
+    <p>
+      <ul style="font-size: 19px;">
+        <li>Keep your body in a straight line, from your head to your heels. Your back should be flat, and your butt should be down, not piking upward.</li>
+        <li>Focus on quality over quantity. If your form starts to feel compromised, stop or drop to your knees to complete your time for the day.</li>
+      </ul>
+    </p>
+
+    <h3>Duration and Frequency:</h3>
+    <p>If you're truly bracing all of your muscles, it can be hard for someone to hold a plank for longer than 20 seconds—and a minute at most. Recommended bursts of 20 seconds at a time. "Long planks do more damage than good."</p>
+
+    <h3>If You're a Beginner:</h3>
+    <p>Engage your core during the entire movement to prevent your back from getting strained or injured. Keep your body in a straight line, from your head to your heels. Your back should be flat, and your butt should be down, not piking upward.<br>
+    If you're new to planks, you can start by performing them on your knees. You can also ask a friend or certified personal trainer at your gym to watch your technique and confirm that your form is correct.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 PROFITNESS. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exercise - PROFITNESS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: url('images/y.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 10;
+      transition: 0.4s ease;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      padding: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      min-width: 220px;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      padding: 8px 20px;
+    }
+
+    .dropdown-content li a {
+      color: #fff;
+      display: block;
+      font-size: 16px;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #00ffcc;
+      color: #000;
+      border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 120px 30px 60px;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 50px;
+      color: #00ffcc;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #eaeaea;
+      text-align: justify;
+    }
+
+    .highlight-aerobic {
+      color: #00ffff;
+      font-weight: bold;
+    }
+
+    .highlight-anaerobic {
+      color: #ff7f50;
+      font-weight: bold;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      background-color: #6a0dad;
+      color: #fff;
+      font-size: 20px;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 35px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .button:hover {
+      background-color: #9400d3;
+      transform: scale(1.05);
+    }
+
+    .button span::after {
+      content: ' \00bb';
+      opacity: 0;
+      margin-left: 8px;
+      transition: opacity 0.3s ease;
+    }
+
+    .button:hover span::after {
+      opacity: 1;
+    }
+
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px 20px;
+      text-align: center;
+      color: #ccc;
+      font-size: 16px;
+      margin-top: 60px;
+    }
+
+    .social-icons {
+      margin-bottom: 15px;
+    }
+
+    .social-icons a {
+      color: #00ffff;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00ffcc;
+    }
+
+    @media screen and (max-width: 768px) {
+      h1 {
+        font-size: 38px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .button {
+        font-size: 18px;
+        padding: 12px 28px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+
+  <script>
+    // Navbar background on scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 30) {
+        header.style.background = 'rgba(0, 0, 0, 0.8)';
+      } else {
+        header.style.background = 'rgba(0, 0, 0, 0.6)';
+      }
+    });
+  </script>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="gym.html">Gym</a></li>
+        <li><a href="plandiet.html">Diet</a></li>
+        <li class="dropdown">
+          <a href="#">Calculators <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown-content">
+            <li><a href="bmi.html">BMI Calculator</a></li>
+            <li><a href="calorie calculator.html">Calorie Calculator</a></li>
+            <li><a href="dietcalculator.html">Diet Calculator</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <div class="content">
+    <h1>EXERCISE</h1>
+    <p>
+      Most people tend to focus on one type of exercise or activity and think they're doing enough. Research has shown that it's important to get all four types of exercise: endurance, strength, balance, and flexibility. Each one has different benefits. Doing one kind also can improve your ability to do the others, and variety helps reduce boredom and risk of injury — no matter your age.
+      <br><br>
+      <span class="highlight-aerobic">Aerobic</span> means 'with air' and refers to the body producing energy with the use of oxygen. This typically involves exercises that last longer than two minutes — like jogging, cycling, or swimming.
+      <br><br>
+      <span class="highlight-anaerobic">Anaerobic</span> means 'without air' and refers to the body producing energy without oxygen. This is typically done at higher intensities, such as sprinting or heavy lifting.
+      <br><br>
+      While aerobic respiration is slower but more efficient (producing up to 38 ATP), anaerobic respiration is fast but produces less energy. Both have evolved to support different physical demands and are essential in their own right.
+    </p>
+
+    <div class="button-container">
+      <button onclick="location.href='aerobic-exersise.html'" class="button"><span>EXPLORE AEROBIC</span></button>
+      <button onclick="location.href='anaerobic-exersise.html'" class="button"><span>EXPLORE ANAEROBIC</span></button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    &copy; 2025 PROFITNESS. All rights reserved.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anaerobic Exercise - PROFITNESS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('images/e.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 8px;
+      min-width: 200px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #00ffcc;
+      color: black;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 40px;
+      padding-top: 120px;
+      color: #00ffcc;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px;
+    }
+
+    .image {
+      position: relative;
+      width: 450px;
+      height: 260px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00ffcc;
+    }
+
+    .image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .image:hover img {
+      transform: scale(1.05);
+    }
+
+    .image div {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0, 255, 204, 0.9);
+      color: black;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .image:hover div {
+      opacity: 1;
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">PROFITNESS</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exersisemain.html">Exercise</a></li>
+      <li><a href="gym.html">Gym</a></li>
+      <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="plandiet.html">Diet</a></li>
+      <li class="dropdown">
+        <a href="#">Calculators</a>
+        <div class="dropdown-content">
+          <a href="calorie calculator.html">Calorie Calculator</a>
+          <a href="bmi.html">BMI Calculator</a>
+          <a href="dietcalculator.html">Diet Calculator</a>
+        </div>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<h2>Anaerobic Exercises</h2>
+<div class="row">
+  <div class="image">
+    <a href="weightlifting.html"><img src="images/weightlifting.jpg" alt="Weight Lifting"></a>
+    <div>WEIGHT LIFTING</div>
+  </div>
+
+  <div class="image">
+    <a href="pushups.html"><img src="images/c.jpg" alt="Push Ups"></a>
+    <div>PUSH UPS</div>
+  </div>
+
+  <div class="image">
+    <a href="isometrices.html"><img src="images/isometrices.jpeg" alt="Isometrices"></a>
+    <div>ISOMETRICES</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="image">
+    <a href="rowing.html"><img src="images/rowing.png" alt="Rowing"></a>
+    <div>ROWING</div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2025 PROFITNESS. All Rights Reserved &reg;
+</footer>
+
+</body>
+</html>

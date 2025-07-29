@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Running | PROFITNESS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-transform: capitalize;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      color: white;
+      position: relative;
+      z-index: 1;
+    }
+
+    video#bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    header {
+      background: rgba(0, 0, 0, 0.75);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.95);
+      min-width: 180px;
+      top: 100%;
+      left: 0;
+      border-radius: 8px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      color: white;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #00ffcc;
+      color: black;
+    }
+
+    h1 {
+      margin-top: 130px;
+      text-align: center;
+      font-size: 48px;
+      color: #00ffcc;
+    }
+
+    .slider {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto;
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #00ffcc;
+      border-radius: 12px;
+    }
+
+    .slides {
+      display: flex;
+      width: 400%;
+      animation: slide 16s infinite;
+    }
+
+    .slides img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% {margin-left: 0%;}
+      20% {margin-left: 0%;}
+      25% {margin-left: -100%;}
+      45% {margin-left: -100%;}
+      50% {margin-left: -200%;}
+      70% {margin-left: -200%;}
+      75% {margin-left: -300%;}
+      95% {margin-left: -300%;}
+      100% {margin-left: 0%;}
+    }
+
+    .content {
+      width: 90%;
+      max-width: 1000px;
+      margin: 20px auto 40px;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+    }
+
+    .content h3 {
+      color: #00ffcc;
+      font-size: 26px;
+      margin-top: 20px;
+    }
+
+    .content p {
+      font-size: 18px;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Video background -->
+  <video autoplay muted loop id="bg-video">
+    <source src="images/fitness-bg.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="gym.html">Gym</a></li>
+        <li class="dropdown">
+          <a href="#">Calculators</a>
+          <div class="dropdown-content">
+            <a href="calorie calculator.html">Calorie Calculator</a>
+            <a href="bmi.html">BMI Calculator</a>
+            <a href="dietcalculator.html">Diet Calculator</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Title -->
+  <h1>Running / Jogging</h1>
+
+  <!-- Image Slider -->
+  <div class="slider">
+    <div class="slides">
+      <img src="images/z.jpg" alt="Running 1" />
+      <img src="images/run.jpg" alt="Running 2" />
+      <img src="images/running.jpeg" alt="Running 3" />
+      <img src="images/jogging.jpg" alt="Running 4" />
+    </div>
+  </div>
+
+  <!-- Content Section -->
+  <div class="content">
+    <h3>Equipment:</h3>
+    <p>Running shoes</p>
+
+    <h3>Benefits:</h3>
+    <p>Running is one of the most effective forms of aerobic exercise. It can improve heart health, burn fat and calories, and lift your mood.</p>
+    <p>Walking daily can reduce your risk of heart disease, obesity, diabetes, high blood pressure, and depression.</p>
+
+    <h3>Safety:</h3>
+    <p>Walk in well-lit and populated areas. Choose shoes that offer good ankle support to reduce your risk for injury.</p>
+
+    <h3>Duration and Frequency:</h3>
+    <p>Running: 20 to 30 minutes, 2 to 3 times per week</p>
+    <p>Walking: 150 minutes per week, or 30 minutes 5 days a week</p>
+
+    <h3>If You're a Beginner:</h3>
+    <p>Run for 20 to 30 minutes twice a week at a conversational pace. Alternate between 5 minutes of running and 1 minute of walking. Always stretch after your run.</p>
+    <p>For walking, aim for 150 minutes per week. Break this down into 30 minutes a day for 5 days or shorter 10-minute sessions three times a day.</p>
+    <p>Use a fitness tracker to monitor steps. Start with your base and gradually increase by 500 to 1,000 steps every 1 to 2 weeks.</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 PROFITNESS. All rights reserved.
+  </footer>
+
+</body>
+</html>

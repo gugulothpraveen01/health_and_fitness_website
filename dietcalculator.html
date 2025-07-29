@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diet Calculator - PROFITNESS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('images/e.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      min-width: 220px;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .dropdown-content li a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #00ffcc;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      padding-top: 120px;
+      color: #00ffcc;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 10px;
+      font-size: 18px;
+    }
+
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: #222;
+      color: #00ffff;
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #00ffcc;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00dddd;
+    }
+
+    #result {
+      color: #00ffcc;
+      font-weight: bold;
+      font-size: 20px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      background-color: #111;
+      font-size: 16px;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="gym.html">Gym</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="plandiet.html">Diet</a></li>
+        <li class="dropdown">
+          <a>Calculators</a>
+          <ul class="dropdown-content">
+            <li><a href="calorie calculator.html">Calorie Calculator</a></li>
+            <li><a href="bmi.html">BMI Calculator</a></li>
+            <li><a href="dietcalculator.html">Diet Calculator</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Diet Planner</h1>
+
+  <div class="container">
+    <label for="age">Enter your age:</label>
+    <input type="number" id="age" placeholder="e.g. 25" />
+
+    <label for="gender">Select your gender:</label>
+    <select id="gender">
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+
+    <label for="height">Enter your height (in cm):</label>
+    <input type="number" id="height" placeholder="e.g. 170" />
+
+    <label for="weight">Enter your weight (in kg):</label>
+    <input type="number" id="weight" placeholder="e.g. 65" />
+
+    <input type="submit" value="Get Diet Plan" onclick="calculateDiet()" />
+
+    <div id="result"></div>
+  </div>
+
+  <footer>
+    &copy; 2025 PROFITNESS. All Rights Reserved &reg;
+  </footer>
+
+  <script>
+    function calculateDiet() {
+      const age = parseInt(document.getElementById("age").value);
+      const gender = document.getElementById("gender").value;
+      const height = parseFloat(document.getElementById("height").value);
+      const weight = parseFloat(document.getElementById("weight").value);
+
+      if (!age || !height || !weight || age <= 0 || height <= 0 || weight <= 0) {
+        document.getElementById("result").innerHTML = "Please fill in all fields with valid values.";
+        return;
+      }
+
+      let bmr = 0;
+      if (gender === "male") {
+        bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+      } else {
+        bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+      }
+
+      const calories = Math.round(bmr * 1.5); // Light activity
+      const veg = Math.round(calories * 0.3 / 0.65);
+      const pulses = Math.round(calories * 0.2 / 3.5);
+      const dairy = Math.round(calories * 0.15 / 0.9);
+      const water = (calories / 1000 * 1.5).toFixed(1);
+
+      document.getElementById("result").innerHTML = `
+        Based on your data, your estimated daily calorie need is <strong>${calories} kcal</strong>.<br><br>
+        🥦 <strong>Vegetables:</strong> ${veg} grams/day<br>
+        🍛 <strong>Pulses:</strong> ${pulses} grams/day<br>
+        🥛 <strong>Dairy Products:</strong> ${dairy} ml/day<br>
+        💧 <strong>Water:</strong> ${water} liters/day
+      `;
+    }
+  </script>
+
+</body>
+</html>

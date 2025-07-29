@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /*1*/
+    body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('images/banner.jpg');
+  background-size: cover;
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+    
+/* Header / Navbar */
+header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      min-width: 220px;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      width: 100%;
+    }
+
+    .dropdown-content li a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #00ffcc;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+      #side{
+        text-align: left;
+        margin-right: 70px;
+      }
+
+    .container {
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 115px;
+      padding: 30px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      background-color: #333;
+      color: white;
+      font-size: 16px;
+      transition: 0.1s ease;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      background-color: #555;
+    }
+
+    .contact-form button {
+      padding: 12px;
+      background-color: #00ffcc;
+      border: none;
+      color: white;
+      font-size: 18px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #4ca895;
+    }
+
+    .contact-info {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      color: white;
+    }
+
+    .contact-info div {
+      width: 30%;
+      text-align: center;
+    }
+
+    .contact-info div i {
+      font-size: 50px;
+      color: #00ffcc;
+    }
+
+    .contact-info div p {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 5px 20px; /* smaller top and bottom padding */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 40px; /* slightly bigger than 20px for proper space */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* This will center text vertically */
+}
+ footer p{
+  margin-top: 75px;
+ }
+    
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        width: 90%;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-info div {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+  <script>
+    // Form Validation Function
+    function validateForm() {
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+      let error = "";
+
+      if (name == "") {
+        error = "Name must be filled out!";
+      } else if (email == "") {
+        error = "Email must be filled out!";
+      } else if (message == "") {
+        error = "Message cannot be empty!";
+      }
+
+      if (error != "") {
+        alert(error);
+        return false;
+      }
+      return true;
+    }
+  </script>
+  <title>Contact Us</title>
+</head>
+<body>
+
+  <!-- Header Section -->
+  
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul id="side">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="Gym.html">Gym</a></li>
+        <li><a href="plandiet.html">Diet</a></li>
+        <li class="dropdown">
+          <a href="#">Calculators <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown-content">
+            <li><a href="bmi.html">BMI Calculator</a></li>
+            <li><a href="calorie calculator.html">Calorie Calculator</a></li>
+            <li><a href="dietcalculator.html">Diet Calculator</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1 style="text-align: center;color: #00ffcc;">Contact Us</h1>
+    <p style="text-align: center;">We would love to hear from you! Reach out to us for any questions or feedback.</p>
+    <form class="contact-form" name="contact-form" action="https://script.google.com/macros/s/AKfycbwFb_PNddj9kKW8drrFI9BuvKX_LlqpQHvjeQG7WyLTmDgLn0Id8x7cpfUip7mlaJw/exec">
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" style="color: #333;">Submit</button>
+    </form>
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <div>
+        <i class="fas fa-map-marker-alt"></i>
+        <p>123 Fitness Street, City, Country</p>
+      </div>
+      <div>
+        <i class="fas fa-phone-alt"></i>
+        <p>+123 456 7890</p>
+      </div>
+      <div>
+        <i class="fas fa-envelope"></i>
+        <p>contact@profitness.com</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p style="margin-bottom:70px;">&copy; 2025 PROFITNESS | All Rights Reserved</p>
+  </footer>
+<script src="contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PROFITNESS</title>
+  <link rel="icon" href="images/newlogo.png" type="image/x-icon" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+    #head{
+      margin-right: 770px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color:white;
+    }
+    /* Navbar Styles */
+    
+    header.navbar {
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 25px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      
+    }
+
+    header.navbar.scrolled {
+      background-color: #000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    header.navbar img {
+      height: 50px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      margin-right: 100px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+
+  
+
+
+    
+
+
+    /* Responsive Layout */
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: #111;
+        padding: 10px;
+        border-radius: 5px;
+      }
+    }
+
+    /* Footer Styles */
+    footer.footer {
+      background-color: #111;
+      color: #aaa;
+      padding: 40px 20px 20px 20px;
+      margin-top: 60px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1200px;
+      margin: auto;
+      gap: 30px;
+      justify-content: space-between;
+    }
+
+    .footer-column {
+      flex: 1 1 200px;
+    }
+
+    .footer-column h3 {
+      color: #fff;
+      margin-bottom: 15px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .footer-column ul li {
+      margin: 8px 0;
+    }
+
+    .footer-column ul li a {
+      color: #aaa;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column ul li a:hover {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 14px;
+      color: #666;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+      
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      padding: 10px 0;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      min-width: 220px;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      padding: 8px 20px;
+    }
+
+    .dropdown-content li a {
+      color: #fff;
+      display: block;
+      font-size: 16px;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #00ffcc;
+      color: #000;
+      border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 120px 30px 60px;
+      max-width: 1000px;
+      margin: auto;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="navbar" id="navbar">
+    <a href="index.html"><img src="images/newlogo.png" alt="PROFITNESS Logo" /></a>
+    <h1  id="head">PROFITNESS</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="exersisemain.html">Exercise</a>
+      <a href="gym.html">Gym</a>
+      <a href="yoga.html">Yoga</a>
+      <a href="plandiet.html">Diet</a>
+      
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
+    <!-- Hero Section -->
+    <section style="text-align:center; padding: 60px 20px;">
+      <h1 style="font-size: 2.5rem; color: #111;">Achieve Your Dream Body with PROFITNESS</h1>
+      <p style="font-size: 1.2rem; margin-top: 15px;">Your personal guide to fitness, workouts, yoga, and diet plans</p>
+      <img src="images/banner.jpg" alt="Fitness Banner" style="width: 100%; max-height: 400px; object-fit: cover; margin-top: 30px; border-radius: 10px;">
+    </section>
+
+    <!-- Features Section -->
+    <section style="padding: 60px 20px;">
+      <h2 style="text-align:center; font-size: 2rem; margin-bottom: 40px;">Why Choose PROFITNESS?</h2>
+      <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: space-around;">
+        <div style="flex: 1 1 300px; background: #e0f7fa; padding: 20px; border-radius: 10px;">
+          <h3>Expert Plans</h3>
+          <p>Workout and diet plans created by certified fitness experts and nutritionists.</p>
+        </div>
+        <div style="flex: 1 1 300px; background: #f0fff0; padding: 20px; border-radius: 10px;">
+          <h3>Customized Goals</h3>
+          <p>Set your fitness goals and follow a tailor-made routine for effective results.</p>
+        </div>
+        <div style="flex: 1 1 300px; background: #fff3e0; padding: 20px; border-radius: 10px;">
+          <h3>Track Progress</h3>
+          <p>Use calculators and trackers to monitor BMI, calories, and daily improvements.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="background: #f8f9fa; padding: 60px 20px;">
+      <h2 style="text-align:center; font-size: 2rem; margin-bottom: 40px;">What Our Users Say</h2>
+      <blockquote style="font-style: italic; text-align: center; max-width: 800px; margin: auto; font-size: 1.2rem;">
+        "PROFITNESS transformed my lifestyle. The yoga guides and workout routines helped me lose 8kgs in 3 months!"
+      </blockquote>
+      <p style="text-align:center; margin-top: 10px; color: #888;">– Priya, Mumbai</p>
+    </section>
+
+    <!-- Category Cards -->
+    <section style="padding: 60px 20px;">
+      <h2 style="text-align:center; font-size: 2rem; margin-bottom: 40px;">Explore Categories</h2>
+      <div style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;" >
+        <div style="width: 250px; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"id="card1">
+          <img src="images/workouto.jpg" alt="Workout" style="width: 100%; height: 150px; object-fit: cover;">
+          <div style="padding: 15px;">
+            <h4>Workout Routines</h4>
+            <p>Effective exercises for strength, weight loss, and endurance.</p>
+          </div>
+        </div>
+        <div style="width: 250px; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"id="card2">
+          <img src="images/yoga.jpg" alt="Yoga" style="width: 100%; height: 150px; object-fit: cover;">
+          <div style="padding: 15px;">
+            <h4>Yoga for Mind & Body</h4>
+            <p>Relax, rejuvenate, and restore balance through guided yoga flows.</p>
+          </div>
+        </div>
+        <div style="width: 250px; background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"id="card3">
+          <img src="images/dieto.jpg" alt="Diet" style="width: 100%; height: 150px; object-fit: cover;">
+          <div style="padding: 15px;">
+            <h4>Smart Diet Plans</h4>
+            <p>Nutrition-rich plans to match your body needs and goals.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: linear-gradient(to right, #00ffff, #009999); color: #000; padding: 60px 20px; text-align: center; border-radius: 20px; margin-top: 40px;">
+      <h2 style="font-size: 2.2rem; margin-bottom: 20px;">Ready to Transform?</h2>
+      <p style="font-size: 1.1rem; margin-bottom: 30px;">Join PROFITNESS now and start your fitness journey today.</p>
+      <a href="contact.html" style="background: #000; color: #00ffff; padding: 12px 24px; border-radius: 25px; font-weight: bold;">Contact Us</a>
+    </section>
+  </div>
+
+  <!-- FOOTER (unchanged) -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>PROFITNESS</h3>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="terms and conditions.html">Terms & Conditions</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="exersisemain.html">Exercises</a></li>
+          <li><a href="gym.html">Gym</a></li>
+          <li><a href="yoga.html">Yoga</a></li>
+          <li><a href="all workout.html">All Workouts</a></li>
+          <li><a href="plandiet.html">Diet Planner</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Calculators</h3>
+        <ul>
+          <li><a href="bmi.html">BMI Calculator</a></li>
+          <li><a href="calorie calculator.html">Calorie Calculator</a></li>
+          <li><a href="dietcalculator.html">Diet Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Support</h3>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="mailto:support@profitness.com">Email Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 PROFITNESS. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JavaScript: Dynamic Navbar -->
+  <script>
+    const navbar = document.getElementById("navbar");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 20) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    });
+  </script>
+</body>
+</html>

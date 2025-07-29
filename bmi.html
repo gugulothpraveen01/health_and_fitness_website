@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator - PROFITNESS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)), url('images/e.jpg');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      color: white;
+    }
+
+    /* Header / Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      min-width: 220px;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      width: 100%;
+    }
+
+    .dropdown-content li a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #00ffcc;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 42px;
+      padding-top: 120px;
+      color: #00ffcc;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.75);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+    }
+
+    label {
+      display: block;
+      margin: 20px 0 10px;
+      font-size: 18px;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: #222;
+      color: #00ffff;
+      margin-top: 5px;
+    }
+
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #00ffcc;
+      color: black;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #00dddd;
+    }
+
+    #output,
+    #comment {
+      color: #00ffcc;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      background-color: #111;
+      font-size: 16px;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="gym.html">Gym</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="plandiet.html">Diet</a></li>>
+        
+        <li class="dropdown">
+          <a>Calculators</a>
+          <ul class="dropdown-content">
+            <li><a href="calorie calculator.html">Calorie Calculator</a></li>
+            <li><a href="bmi.html">BMI Calculator</a></li>
+            <li><a href="dietcalculator.html">Diet Calculator</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Body Mass Index Calculator</h1>
+
+  <div class="container">
+    <label>Enter your height:
+      <input type="text" id="height">
+      <select id="heightunits">
+        <option value="metres">Metres</option>
+        <option value="inches">Inches</option>
+      </select>
+    </label>
+
+    <label>Enter your weight:
+      <input type="text" id="weight">
+      <select id="weightunits">
+        <option value="kg">Kilograms</option>
+        <option value="lb">Pounds</option>
+      </select>
+    </label>
+
+    <input type="submit" value="Check your BMI" onclick="computeBMI();">
+
+    <label>Your BMI is: <span id="output">?</span></label>
+    <label>This means you are: <span id="comment">?</span></label>
+  </div>
+
+  <footer>
+    &copy; 2025 PROFITNESS. All Rights Reserved &reg;
+  </footer>
+
+  <script>
+    function computeBMI() {
+      const height = parseFloat(document.getElementById("height").value);
+      const weight = parseFloat(document.getElementById("weight").value);
+      const heightunits = document.getElementById("heightunits").value;
+      const weightunits = document.getElementById("weightunits").value;
+
+      let h = height;
+      let w = weight;
+
+      if (heightunits === "inches") h = height / 39.3700787;
+      if (weightunits === "lb") w = weight / 2.20462;
+
+      const bmi = w / (h * h);
+      const output = Math.round(bmi * 100) / 100;
+
+      document.getElementById("output").innerText = output;
+
+      let status = "";
+      if (output < 18.5) status = "Underweight";
+      else if (output >= 18.5 && output <= 25) status = "Normal";
+      else if (output > 25 && output <= 30) status = "Overweight";
+      else status = "Obese";
+
+      document.getElementById("comment").innerText = status;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Workouts - PROFITNESS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/i.jpg) no-repeat center center fixed;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      color: #0a0a23;
+    }
+
+   /* Header / Navbar */
+   header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      min-width: 220px;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      width: 100%;
+    }
+
+    .dropdown-content li a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #00ffcc;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    /* Search Bar Styling */
+.search-bar {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.search-bar input {
+  padding: 12px 20px;
+  width: 50%;
+  border: 2px solid #00ffcc; /* Match the border color with your theme */
+  border-radius: 20px; /* Rounded corners for a modern look */
+  font-size: 16px;
+  background-color: #1c1c1c; /* Dark background for input field */
+  color: #fff; /* White text color */
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-bar input::placeholder {
+  color: #b3b3b3; /* Light gray for the placeholder text */
+}
+
+.search-bar input:focus {
+  border-color: #00ffff; /* Highlight the border on focus with a brighter cyan */
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.5); /* Light cyan glow around input on focus */
+}
+
+
+    /* Video Grid */
+    .container {
+      padding: 20px;
+      
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .video-card {
+      color: grey;
+      background-color: rgba(0, 0, 0, 0.8);
+      flex-shrink: 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 255, 204, 0.5); /* Light cyan shadow */
+      overflow: hidden;
+      transition: transform 0.3s;
+      text-align: center;
+      
+    }
+    .video-card:hover {
+      transform: scale(1.03);
+    }
+    .video-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .video-card h3 {
+      padding: 10px;
+      font-size: 20px;
+      
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px 20px;
+      text-align: center;
+      color: #ccc;
+      font-size: 16px;
+      margin-top: 60px;
+    }
+
+    .social-icons {
+      margin-bottom: 15px;
+    }
+
+    .social-icons a {
+      color: #00ffff;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00ffcc;
+    }
+  </style>
+</head>
+
+<body>
+
+ <!-- Header -->
+ <header>
+  <div class="logo">PROFITNESS</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="exersisemain.html">Exercise</a></li>
+      <li><a href="yoga.html">Yoga</a></li>
+      <li><a href="Gym.html">Gym</a></li>
+      <li><a href="plandiet.html">Diet</a></li>
+      <li class="dropdown">
+        <a href="#">Calculators <i class="fas fa-caret-down"></i></a>
+        <ul class="dropdown-content">
+          <li><a href="bmi.html">BMI Calculator</a></li>
+          <li><a href="calorie calculator.html">Calorie Calculator</a></li>
+          <li><a href="dietcalculator.html">Diet Calculator</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Search Bar -->
+<div class="search-bar" style="margin-top: 100px;">
+  <h1 style="color:#00ffcc">All Workouts</h1>
+  <input type="text" id="searchInput" placeholder="Search Workouts...">
+  
+</div>
+
+<!-- Page Content -->
+<div class="container">
+  
+  <div class="grid" id="videoGrid">
+
+    <!-- Video 1 -->
+    <div class="video-card">
+      <video src="images/jumpingjacks.mp4" controls></video>
+      <h3>jumping jacks</h3>
+    </div>
+
+    <!-- Video 2 -->
+    <div class="video-card">
+      <video src="images/armanticlock.mp4" controls></video>
+      <h3>arm anti clock</h3>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="video-card">
+      <video src="images/armclock.mp4" controls></video>
+      <h3>arm clock</h3>
+    </div>
+
+    <!-- Video 4 -->
+    <div class="video-card">
+      <video src="images/armrsaise.mp4" controls></video>
+      <h3>arm araises</h3>
+    </div>
+
+    <!-- Video 5 -->
+    <div class="video-card">
+      <video src="images/backward.mp4" controls></video>
+      <h3>backward</h3>
+    </div>
+
+    <!-- Video 6 -->
+    <div class="video-card">
+      <video src="images/bicycle.mp4" controls></video>
+      <h3>bicycle</h3>
+    </div>
+
+    <!-- Video 7 -->
+    <div class="video-card">
+      <video src="images/burpees.mp4" controls></video>
+      <h3>burpees</h3>
+    </div>
+
+    <!-- Video 8 -->
+    <div class="video-card">
+      <video src="images/buttbridge.mp4" controls></video>
+      <h3>buttbridge</h3>
+    </div>
+
+
+    <!-- Video 8 -->
+    <div class="video-card">
+      <video src="images/cat.mp4" controls></video>
+      <h3>cat</h3>
+    </div>
+
+
+<!-- Video 8 -->
+<div class="video-card">
+  <video src="images/cheststrechleft.mp4" controls></video>
+  <h3>chest stretchtleft</h3>
+</div>
+
+
+
+
+<!-- Video 8 -->
+<div class="video-card">
+  <video src="images/cheststrechright.mp4" controls></video>
+  <h3>chest stretch right</h3>
+</div>
+
+
+
+    <!-- Video 8 -->
+    <div class="video-card">
+      <video src="images/childpose.mp4" controls></video>
+      <h3>child pose</h3>
+    </div>
+
+
+
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+  </div>
+  <p>&copy; PROFITNESS 2025. All Rights Reserved &reg;</p>
+</footer>
+
+<!-- Search Filter Script -->
+<script>
+  const searchInput = document.getElementById('searchInput');
+  const videoGrid = document.getElementById('videoGrid');
+  const videos = videoGrid.getElementsByClassName('video-card');
+
+  searchInput.addEventListener('keyup', function() {
+    const filter = searchInput.value.toLowerCase();
+    for (let i = 0; i < videos.length; i++) {
+      const title = videos[i].getElementsByTagName('h3')[0];
+      if (title.innerHTML.toLowerCase().indexOf(filter) > -1) {
+        videos[i].style.display = "";
+      } else {
+        videos[i].style.display = "none";
+      }
+    }
+  });
+</script>
+
+</body>
+</html>

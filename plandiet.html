@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Diet - PROFITNESS</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(images/i.jpg) no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+     
+      
+    }
+    ul{
+        list-style-type: none;
+    }
+    /* Header / Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+      position: relative;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown > a {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.95);
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+      min-width: 220px;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+
+    .dropdown-content li {
+      width: 100%;
+    }
+
+    .dropdown-content li a {
+      display: block;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #00ffcc;
+      color: black;
+      border-radius: 5px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px 20px;
+      text-align: center;
+      color: #ccc;
+      font-size: 16px;
+      margin-top: 60px;
+    }
+
+    .social-icons {
+      margin-bottom: 15px;
+    }
+
+    .social-icons a {
+      color: #00ffff;
+      margin: 0 10px;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #00ffcc;
+    }
+
+    /* Content Styling */
+    .content {
+      margin-top: 100px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    fieldset {
+      background-color: rgba(0, 0, 0, 0.7);
+      border: 1px solid #fff;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    img {
+      width: 650px;
+      height: 500px;
+      opacity: 0.7;
+      margin: 20px 0;
+    }
+
+    a.i {
+      color: #00ffcc;
+      font-size: 20px;
+      text-decoration: none;
+    }
+
+    a.i:hover {
+      color: red;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="Gym.html">Gym</a></li>
+        <li><a href="plandiet.html">Diet</a></li>
+        <li class="dropdown">
+          <a href="#">Calculators <i class="fas fa-caret-down"></i></a>
+          <ul class="dropdown-content">
+            <li><a href="bmi.html">BMI Calculator</a></li>
+            <li><a href="calorie calculator.html">Calorie Calculator</a></li>
+            <li><a href="dietcalculator.html">Diet Calculator</a></li>
+          </ul>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <div class="content">
+    <h1>Balanced Diet Chart</h1>
+    <img src="images/diet1.jpg" alt="Balanced Diet Image">
+
+    <fieldset>
+      <h1><u>What Is A Balanced Diet?</u></h1>
+      <h2><a href="dietcalculator.html" class="i">--> plan your diet with PROFITNESS now <--</a></h2>
+      <p>A balanced diet gives your body the nutrients it needs to function correctly. To get the nutrition you need, most of your daily calories should come from:</p>
+      <ul>
+        <li>Fresh fruits</li>
+        <li>Fresh vegetables</li>
+        <li>Whole grains</li>
+        <li>Legumes</li>
+        <li>Nuts</li>
+        <li>Lean proteins</li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <h1><u>Calories</u></h1>
+      <div>
+        <img src="images/calories.jpeg" alt="Calories Image">
+      </div>
+      <p>The number of calories in a food refers to the amount of energy stored in that food...</p>
+    </fieldset>
+
+    <fieldset>
+      <h1><u>What to eat for a balanced diet</u></h1>
+      <p>A healthy, balanced diet will usually include the following nutrients:</p>
+      <ul>
+        <li>Vitamins, minerals, and antioxidants</li>
+        <li>Carbohydrates, including starches and fiber</li>
+        <li>Protein</li>
+        <li>Healthy fats</li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <h1><u>Foods to avoid in diet</u></h1>
+      <p>Foods to avoid or limit on a healthy diet include:</p>
+      <ul>
+        <li>Highly processed foods</li>
+        <li>Oily food</li>
+        <li>Refined grains</li>
+        <li>Added sugar and salt</li>
+        <li>Red and processed meat</li>
+        <li>Alcohol</li>
+      </ul>
+    </fieldset>
+
+    <fieldset>
+      <h1><u>Vegetables</u></h1>
+      <div>
+        <img src="images/healthyvegitables.jpg" alt="Vegetables Image">
+      </div>
+      <p>Vegetables are a key source of essential vitamins, minerals, and antioxidants...</p>
+    </fieldset>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>&copy; PROFITNESS 2025. All Rights Reserved &reg;</p>
+  </footer>
+</body>
+</html>

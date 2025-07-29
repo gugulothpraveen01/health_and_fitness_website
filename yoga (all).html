@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YOGA | PROFITNESS</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-transform: capitalize;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+		background: url('images/yogaallback.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: bold;
+      color: #00ffcc;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffff;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: rgba(0, 0, 0, 0.95);
+      border-radius: 6px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 10px 15px;
+      color: white;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background: #00ffcc;
+      color: black;
+      border-radius: 4px;
+    }
+
+    h1 {
+      margin-top: 130px;
+      text-align: center;
+      font-size: 48px;
+      color: #00ffcc;
+    }
+
+    .container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .i {
+      width: 660px;
+      height: 280px;
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      border-radius: 12px;
+      opacity: 0.6;
+    }
+
+    .i:hover {
+      width: 680px;
+      height: 290px;
+      opacity: 1;
+    }
+
+    footer {
+      background: rgba(0, 0, 0, 0.8);
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .i {
+        width: 90%;
+        height: auto;
+      }
+
+      .i:hover {
+        width: 92%;
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">PROFITNESS</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exersisemain.html">Exercise</a></li>
+        <li><a href="gym.html">Gym</a></li>
+        <li><a href="yoga.html">Yoga</a></li>
+        <li><a href="plandiet.html">Diet</a></li>
+        <li class="dropdown">
+          <a href="#">Calculators</a>
+          <div class="dropdown-content">
+            <a href="calorie%20calculator.html">Calorie Calculator</a>
+            <a href="bmi.html">BMI Calculator</a>
+            <a href="dietcalculator.html">Diet Calculator</a>
+          </div>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <h1>Yoga – All Levels</h1>
+
+  <div class="container">
+    <a href="yoga beginner.html"><img src="images/yoga b.jpg" class="i" alt="Yoga Beginner"></a><br>
+    <a href="yoga intermediate.html"><img src="images/yoga i.jpg" class="i" alt="Yoga Intermediate"></a><br>
+    <a href="yoga advance.html"><img src="images/yoga a.jpg" class="i" alt="Yoga Advanced"></a>
+  </div>
+
+  <footer>
+    &copy; 2025 PROFITNESS. All Rights Reserved &reg;
+  </footer>
+
+</body>
+</html>
