@@ -96,7 +96,7 @@ This project was created as a **college final year submission** and is currently
 
 ## 📧 Contact
 
-**Romelix J**  
+**Guguloth Praveen**  
 📩 Email: [your-email@example.com]  
 🔗 LinkedIn: [your-linkedin-profile]  
 📍 Location: India
